@@ -21,15 +21,15 @@ public class MainController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
-		String part = request.getParameter("part");
-		
+		String _part = request.getParameter("part");
+		String part = "전신";
 		List<Video> videoList = videoDao.selectAll();
 		request.setAttribute("videoList", videoList);
-		System.out.println(part);
-//		if(!part.isEmpty()) {
-//			List<Video> partList = videoDao.selectPartFitVideo("");
-//			request.setAttribute("partList", partList);
-//		}
+		if(_part != null) {
+			part = _part;
+		}
+		List<Video> partList = videoDao.selectPartFitVideo(part);
+		request.setAttribute("partList", partList);
 		request.getRequestDispatcher("/index.jsp").forward(request, response);
 	}
 }

@@ -56,11 +56,12 @@
         <hr>
         <div>
         	<form action="review" method="post">
-        		<input type="hidden" name="action" value="regist"/>
-        		<input type="hidden" name="videoId" value="${param.id}"/>
-        		<input id="title" name="title" type="text" placeholder="제목">
-        		<textarea id="content" name="content" placeholder="내용"></textarea>
-        		<input type="submit">등록</button>
+        		<input type="hidden" name="action" value="update"/>
+        		<input type="hidden" name="videoId" value="${param.videoId}"/>
+        		<input type="hidden" name="reviewId" value="${param.reviewId}"/>
+        		<input id="title" name="title" type="text" placeholder="제목" value="${review.title }">
+        		<textarea id="content" name="content" placeholder="내용">${review.content }</textarea>
+        		<input type="submit" value="수정">
             	<button id="cancelBtn">취소</button>
         	</form>
         </div>

@@ -25,11 +25,14 @@ public class ReviewDaoImpl implements ReviewDao {
 
 	@Override
 	public void updateReview(Review review) {
-		for (Review updateReveiw : reviewList) {
-			if (updateReveiw.getReviewId() == review.getReviewId()) {
-				reviewList.set(updateReveiw.getReviewId() - 1, review);
+		int idx = -1;
+		for(int i=0; i<reviewList.size(); i++) {
+			if(reviewList.get(i).getVideoId().equals(review.getVideoId()) && reviewList.get(i).getReviewId() == review.getReviewId()) {
+				idx = i;
 			}
 		}
+		
+		reviewList.set(idx, review);
 	}
 
 	@Override
@@ -45,19 +48,8 @@ public class ReviewDaoImpl implements ReviewDao {
 	}
 
 	@Override
-	public Review getReview(int reviewId) {
-		Review tmp = new Review();
-		for (Review review : reviewList) {
-			if (review.getReviewId() == reviewId) {
-				tmp = review;
-			}
-		}
-		return tmp;
-	}
-
-	@Override
-	public void deleteReview(int reviewId) {
-		reviewList.remove(reviewId-1);
+	public void deleteReview(Review review) {
+		reviewList.remove(review);
 	}
 
 }

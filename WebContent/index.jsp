@@ -78,10 +78,10 @@
 			<article style="margin: 0px; padding: 0px;">
 				<div>
 					<div class="title" style="font-size: x-large;">운동 부위 선택</div>
-					<button id="enBodyBtn" class="btn" type="submit">전신</button>
-					<button id="upBodyBtn" class="btn" type="submit">상체</button>
-					<button id="loBodyBtn" class="btn" type="submit">하체</button>
-					<button id="abMuscleBtn" class="btn" type="submit">복부</button>
+					<button id="enBodyBtn" class="btn" type="submit"><a href="${pageContext.request.contextPath }/main?part=전신">전신</a></button>
+					<button id="upBodyBtn" class="btn" type="submit"><a href="${pageContext.request.contextPath }/main?part=상체">상체</a></button>
+					<button id="loBodyBtn" class="btn" type="submit"><a href="${pageContext.request.contextPath }/main?part=하체">하체</a></button>
+					<button id="abMuscleBtn" class="btn" type="submit"><a href="${pageContext.request.contextPath }/main?part=복부">복부</a></button>
 				</div>
 
 				<fieldset>
