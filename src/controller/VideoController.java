@@ -51,6 +51,7 @@ public class VideoController extends HttpServlet {
 		String id = request.getParameter("id");
 		Video video = videoDao.selectVideo(id);
 		List<Review> reviewList = reviewDao.getReviewList(id);
+		request.setAttribute("reviewList", reviewList);
 		request.setAttribute("video", video);
 		request.getRequestDispatcher("reviewList.jsp").forward(request, response);
 	}

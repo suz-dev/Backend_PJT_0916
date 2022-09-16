@@ -8,8 +8,7 @@ public class Review {
 	private int reviewId;
 	private String title;
 	private String content;
-	private String wirter;
-	private Date creatTime;
+	private String writer;
 
 	public Review() {
 		super();
@@ -21,8 +20,7 @@ public class Review {
 		this.reviewId = reviewId;
 		this.title = title;
 		this.content = content;
-		this.wirter = wirter;
-		this.creatTime = creatTime;
+		this.writer = wirter;
 	}
 
 	public String getVideoId() {
@@ -57,26 +55,19 @@ public class Review {
 		this.content = content;
 	}
 
-	public String getWirter() {
-		return wirter;
+	public String getWriter() {
+		return writer;
 	}
 
-	public void setWirter(String wirter) {
-		this.wirter = wirter;
+	public void setWriter(String wirter) {
+		this.writer = wirter;
 	}
 
-	public Date getCreatTime() {
-		return creatTime;
-	}
-
-	public void setCreatTime(Date creatTime) {
-		this.creatTime = creatTime;
-	}
 
 	@Override
 	public String toString() {
 		return "Review [videoId=" + videoId + ", reviewId=" + reviewId + ", title=" + title + ", content=" + content
-				+ ", wirter=" + wirter + ", creatTime=" + creatTime + "]";
+				+ ", wirter=" + writer + "]";
 	}
 
 }

@@ -15,9 +15,7 @@ public interface ReviewDao {
 	// 리뷰 목록
 	public List<Review> getReviewList(String videoId);
 
-	// 리뷰 상세
-	public Review getReview(int reviewId);
 
 	// 리뷰 삭제
-	public void deleteReview(int reviewId);
+	public void deleteReview(Review review);
 }
