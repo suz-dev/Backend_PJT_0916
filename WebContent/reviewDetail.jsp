@@ -82,45 +82,6 @@ textarea {
 		crossorigin="anonymous"></script>
 
 
-	<script>
-        const title = document.querySelector("#title")
-        const content = document.querySelector("#content")
-        const registBtn = document.querySelector("#registBtn")
-        const cancelBtn = document.querySelector("#cancelBtn")
-
-        //초기화면
-        window.addEventListener("load", () => {
-            const video = JSON.parse(localStorage.getItem("video"))
-            const iframeTag = document.querySelector("#videoPlayer")
-            iframeTag.setAttribute("src", video.url)
-
-        })
-
-        //리뷰 생성 및 등록
-        const createRiview = (review) => {
-            console.log(review)
-        }
-
-        //등록 버튼 클릭
-        registBtn.addEventListener("click", () => {
-            let review = {
-                title: title.value,
-                content: content.value,
-            }
-            createRiview(review)
-            title.value = ""
-            content.value = ""
-            alert("리뷰가 등록되었습니다.")
-            window.location.replace("review.html")
-        })
-
-        //취소버튼클릭
-        cancelBtn.addEventListener("click", () => {
-            window.location.replace("review.html")
-        })
-
-    </script>
-
 </body>
 
 </html>
