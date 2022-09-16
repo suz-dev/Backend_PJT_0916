@@ -24,7 +24,7 @@
 <body>
 	<%@ include file="include/header.jsp"%>
 	<main>
-	<div class="video-container">
+	<div class="video-container d-flex justify-content:center">
 		<iframe width="560" height="315" src="${video.url}"
 			title="YouTube video player" frameborder="0"
 			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -81,17 +81,7 @@
 					</tbody>
 				</table>
 			</div>
-			<div class="page-content">
-				<div class="arrow" id="left">
-					<button type="button" class="btn btn-outline-secondary">&lt;</button>
-				</div>
-				<div class="page">
-					<button class="btn btn-primary" type="submit">1</button>
-				</div>
-				<div class="arrow" id="right">
-					<button type="button" class="btn btn-outline-secondary">&gt;</button>
-				</div>
-			</div>
+
 		</div>
 	</div>
 	</main>

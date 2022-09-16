@@ -30,6 +30,6 @@ public class MainController extends HttpServlet {
 		}
 		List<Video> partList = videoDao.selectPartFitVideo(part);
 		request.setAttribute("partList", partList);
-		request.getRequestDispatcher("/index.jsp").forward(request, response);
+		request.getRequestDispatcher("/main.jsp").forward(request, response);
 	}
 }
