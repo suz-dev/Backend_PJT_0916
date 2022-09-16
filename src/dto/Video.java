@@ -1,6 +1,6 @@
 package dto;
 
-public class Video {
+public class Video implements Comparable<Video>{
 
 	private String id;
 	private String title;
@@ -76,4 +76,11 @@ public class Video {
 		return "Video [id=" + id + ", title=" + title + ", part=" + part + ", channelName=" + channelName + ", url="
 				+ url + "]";
 	}
+
+	@Override
+	public int compareTo(Video o) {
+		return o.viewCnt- this.viewCnt;
+	}
+	
+	
 }

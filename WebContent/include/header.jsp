@@ -27,7 +27,7 @@
 	<header
 		class="d-flex flex-wrap justify-content-center py-3 border-bottom"
 		style="margin-bottom: 0px;">
-		<a href="/"
+		<a href="${pageContext.request.contextPath}/main"
 			class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
 			<svg class="bi me-2" width="40" height="32">
         <use xlink:href="#bootstrap"></use>
@@ -48,10 +48,10 @@
 
 			<c:if test="${!empty loginUser }">
 				<li class="nav-item">
-					<p class="nav-link">${ loginUser.userName }님환영합니다.</p>
+					<p class="nav-link">${ loginUser.userName }님 환영합니다.</p>
 				</li>
 				<li class="nav-item"><a class="nav-link"
-					href="${pageContext.request.contextPath}/UserServlet?action=logout">로그아웃</a>
+					href="${pageContext.request.contextPath}/user?action=logout">로그아웃</a>
 				</li>
 			</c:if>
 		</ul>

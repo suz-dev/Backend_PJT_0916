@@ -23,38 +23,37 @@
 
 <body>
 	<%@ include file="include/header.jsp"%>
+	<br>
 	<main>
-	<div class="video-container d-flex justify-content:center">
+	<div class="video-container d-flex justify-content-center">
+
 		<iframe width="560" height="315" src="${video.url}"
 			title="YouTube video player" frameborder="0"
 			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 			allowfullscreen></iframe>
+
 	</div>
 	<hr>
 	<div class="review-container">
 		<div class="review-table-header">
-			<div class="add-review-button">
-				<!-- <input type="button" name="addreview" value="글작성"> -->
+
+			<span class="add-review-button"> <!-- <input type="button" name="addreview" value="글작성"> -->
 				<button type="button" class="btn btn-outline-primary"
 					id="makeReview">
-					<a href="${pageContext.request.contextPath }/review?action=getForm&id=${video.id}">글작성</a>
+					<a
+						href="${pageContext.request.contextPath }/review?action=getForm&id=${video.id}">글작성</a>
 				</button>
-			</div>
-			<div class="search-area">
-				<!-- <input type="text" name="searchvideo" value="제목, 내용으로 검색"> -->
-				<form>
-					<div class="form-group row">
-						<label for="inputPassword" class="col-sm-2 col-form-label"></label>
-						<div class="col-sm-10">
-							<div class="glass">
-								<i class="bi bi-search"></i>
-							</div>
-							<input type="password" class="form-control" id="inputText"
-								placeholder="제목, 내용으로 검색">
-						</div>
-					</div>
-				</form>
-			</div>
+				
+				
+			</span> <i class="bi bi-search"
+				style="display: inline-block; margin: 0 5px; float: right;"></i> <span
+				class="col-lg-4"
+				style="display: inline-block; margin: 0 5px; float: right;">
+				<input type="password" class="form-control" class="col-xs-3"
+				id="inputText" placeholder="제목, 내용으로 검색">
+			</span>
+
+
 		</div>
 		<hr>
 		<div class="review-content">
@@ -72,7 +71,8 @@
 							<c:forEach var="review" items="${reviewList}">
 								<tr>
 									<td scope="col">${review.reviewId+1}</td>
-									<td scope="col"><a href="${pageContext.request.contextPath}/review?action=detail&videoId=${video.id}&reviewId=${review.reviewId}">${review.title}</a></td>
+									<td scope="col"><a
+										href="${pageContext.request.contextPath}/review?action=detail&videoId=${video.id}&reviewId=${review.reviewId}">${review.title}</a></td>
 									<td scope="col">${review.writer}</td>
 								</tr>
 							</c:forEach>

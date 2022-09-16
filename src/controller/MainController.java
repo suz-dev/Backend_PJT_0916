@@ -1,6 +1,7 @@
 package controller;
 
 import java.io.IOException;
+import java.util.Collections;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -24,6 +25,7 @@ public class MainController extends HttpServlet {
 		String _part = request.getParameter("part");
 		String part = "전신";
 		List<Video> videoList = videoDao.selectAll();
+		Collections.sort(videoList);
 		request.setAttribute("videoList", videoList);
 		if(_part != null) {
 			part = _part;

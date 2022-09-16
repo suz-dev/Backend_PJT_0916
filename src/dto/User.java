@@ -14,7 +14,7 @@ public class User {
 
 
 
-	public User(int userSeq, String userId, String password, String userName, String nickName, String email) {
+	public User(int userSeq, String userId, String password, String userName) {
 		super();
 		this.userSeq = userSeq;
 		this.userId = userId;
