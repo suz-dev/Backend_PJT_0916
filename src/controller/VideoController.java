@@ -50,6 +50,7 @@ public class VideoController extends HttpServlet {
 			throws ServletException, IOException {
 		String id = request.getParameter("id");
 		Video video = videoDao.selectVideo(id);
+		video.setViewCnt(video.getViewCnt()+1);
 		List<Review> reviewList = reviewDao.getReviewList(id);
 		request.setAttribute("reviewList", reviewList);
 		request.setAttribute("video", video);

@@ -11,4 +11,5 @@ public interface VideoDao {
 	public Video selectVideo(String VideoId);
 
 	public List<Video> selectPartFitVideo(String part);
+	
 }

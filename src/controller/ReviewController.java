@@ -9,11 +9,13 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import dao.ReviewDao;
 import dao.ReviewDaoImpl;
 import dao.VideoDao;
 import dto.Review;
+import dto.User;
 import dto.Video;
 
 @WebServlet("/review")
@@ -78,13 +80,20 @@ public class ReviewController extends HttpServlet {
 
 	private void doRegist(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		HttpSession session = request.getSession();
+		User loginUser = (User) session.getAttribute("loginUser");
+		if(loginUser==null) {
+			request.setAttribute("msg", "로그인 후 이용해주세요.");
+			request.getRequestDispatcher("error/error.jsp").forward(request, response);
+		}
 		Review review = new Review();
 		String id = request.getParameter("videoId");
 		review.setVideoId(id);
 		review.setReviewId(reviewDao.getReviewList(id).size());
 		review.setContent(request.getParameter("content"));
 		review.setTitle(request.getParameter("title"));
-
+		review.setWriter(loginUser.getUserName());
+		
 		reviewDao.writeReview(review);
 		response.sendRedirect("/Backend_0916/video?action=detail&id=" + id);
 	}
@@ -119,6 +128,16 @@ public class ReviewController extends HttpServlet {
 			if (review.getReviewId() == reviewId) {
 				findReview = review;
 			}
+		}
+		
+		HttpSession session = request.getSession();
+		User loginUser = (User) session.getAttribute("loginUser");
+		if(loginUser==null) {
+			request.setAttribute("msg", "로그인 후 이용해주세요.");
+			request.getRequestDispatcher("error/error.jsp").forward(request, response);
+		}else if(!loginUser.getUserName().equals(findReview.getWriter())) {
+			request.setAttribute("msg", "권한이 없습니다.");
+			request.getRequestDispatcher("error/error.jsp").forward(request, response);
 		}
 	
 		findReview.setContent(request.getParameter("content"));

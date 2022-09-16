@@ -21,8 +21,9 @@
 		<section>
 			<!--흠-->
 			<nav class="navbar navbar-light bg-light">
+
 				<div class="container-fluid">
-					<form class="d-flex flex-row bd-highlight mb-3">
+					<form class="d-flex flex-row">
 						<input class="form-control me-2" type="search"
 							placeholder="운동을 검색하세요" aria-label="Search">
 						<button class="btn btn-outline-primary" type="submit">Search</button>
@@ -41,13 +42,13 @@
 						<div class="swiper-slide">
 
 							<ul id="video-list" width="100%">
-								<c:forEach var="video" items="${videoList}">
-									<div class="d-inline-flex flex-nowrap">
-										<span class="card" style="width: 18rem;">
-											<a href="video?action=detail&id=${video.id}"> <img
+								<div class="d-inline-flex flex-nowrap">
+									<c:forEach var="video" items="${videoList}">
+										<span class="card" style="width: 18rem;"> <a
+											href="video?action=detail&id=${video.id}"> <img
 												class="card-img-top" src="./img/thumbnail${video.id}.jpg"
 												alt="Card image cap">
-											</a>
+										</a>
 											<div class="card-body">
 												<p class="card-text">
 												<div class="card-upper">
@@ -55,14 +56,15 @@
 													<div class="viewCnt">${video.viewCnt}</div>
 												</div>
 												</p>
+
 												<div class="btns">
 													<div class="part">${video.part}</div>
 												</div>
 											</div>
 										</span>
-									</div>
 
-								</c:forEach>
+									</c:forEach>
+								</div>
 							</ul>
 
 						</div>
@@ -78,10 +80,18 @@
 			<article style="margin: 0px; padding: 0px;">
 				<div>
 					<div class="title" style="font-size: x-large;">운동 부위 선택</div>
-					<button id="enBodyBtn" class="btn" type="submit"><a href="${pageContext.request.contextPath }/main?part=전신">전신</a></button>
-					<button id="upBodyBtn" class="btn" type="submit"><a href="${pageContext.request.contextPath }/main?part=상체">상체</a></button>
-					<button id="loBodyBtn" class="btn" type="submit"><a href="${pageContext.request.contextPath }/main?part=하체">하체</a></button>
-					<button id="abMuscleBtn" class="btn" type="submit"><a href="${pageContext.request.contextPath }/main?part=복부">복부</a></button>
+					<button id="enBodyBtn" class="btn" type="submit">
+						<a href="${pageContext.request.contextPath }/main?part=전신">전신</a>
+					</button>
+					<button id="upBodyBtn" class="btn" type="submit">
+						<a href="${pageContext.request.contextPath }/main?part=상체">상체</a>
+					</button>
+					<button id="loBodyBtn" class="btn" type="submit">
+						<a href="${pageContext.request.contextPath }/main?part=하체">하체</a>
+					</button>
+					<button id="abMuscleBtn" class="btn" type="submit">
+						<a href="${pageContext.request.contextPath }/main?part=복부">복부</a>
+					</button>
 				</div>
 
 				<fieldset>

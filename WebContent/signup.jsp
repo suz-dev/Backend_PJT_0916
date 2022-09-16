@@ -1,14 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HTML5 Form template</title>
-
+<title>Document</title>
 <style>
 * {
 	box-sizing: border-box;
@@ -17,12 +16,12 @@
 body {
 	margin: 0;
 	padding: 0;
-	color: #ffffff;
+	color: skyblue;
 	font-size: 15px;
 }
 
 input, textarea, button {
-	color: grey;
+	color: gray;
 	font-size: 15px;
 }
 
@@ -58,7 +57,7 @@ p {
 	max-width: 767px;
 	margin: auto;
 	padding: 70px 100px 80px;
-	border: 10px solid whitesmoke;
+	border: 10px solid skyblue;
 	background: white;
 	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
 }
@@ -102,7 +101,7 @@ p {
 }
 
 .form-control:focus, .form-control:valid {
-	border-bottom: 2px solid #ffffff;
+	border-bottom: 2px solid grey;
 }
 
 .form-control:focus+span, .form-control:valid+span {
@@ -117,79 +116,25 @@ textarea.form-control {
 	padding: 13px 1px;
 }
 
-button {
-	width: 100px;
-	height: 51px;
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	margin: 60px auto 0;
-	padding: 0;
-	color: #ffffff;
-	border: 2px solid #ffffff;
-	border-radius: 4px;
-	background-color: skyblue;
-	cursor: pointer;
-	text-transform: uppercase;
-	transition: background-color 0.2s linear;
-}
-
 button[type="submit"] {
-	width: 100px;
+	width: 162px;
 	height: 51px;
-	display: inline-flex;
+	display: flex;
 	align-items: center;
 	justify-content: center;
 	margin: 60px auto 0;
 	padding: 0;
-	color: #ffffff;
-	border: 2px solid #ffffff;
+	color: white;
+	border: 2px solid white;
 	border-radius: 4px;
 	background-color: skyblue;
-	cursor: pointer;
-	text-transform: uppercase;
-	transition: background-color 0.2s linear;
-}
-
-button[type="cancel"] {
-	width: 100px;
-	height: 51px;
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	margin: 60px auto 0;
-	padding: 0;
-	color: #ffffff;
-	border: 2px solid gainsboro;
-	border-radius: 4px;
-	background-color: gainsboro;
 	cursor: pointer;
 	text-transform: uppercase;
 	transition: background-color 0.2s linear;
 }
 
 button[type="submit"]:hover {
-	background-color: skyblue;
-}
-
-@media ( max-width :767px) {
-	h3 {
-		font-size: 38px
-	}
-	p {
-		padding: 0;
-		font-size: 14px;
-	}
-	.wrapper {
-		background: #39459b;
-		border: 10px solid #95c6db;
-	}
-	.form-container {
-		width: 100%;
-		padding: 24px;
-		border: none;
-		box-shadow: none;
-	}
+	background-color: grey;
 }
 </style>
 </head>
@@ -197,30 +142,26 @@ button[type="submit"]:hover {
 <body>
 	<div class="wrapper">
 		<div class="form-container">
-			<form action="user" method="post">
-				<h1 style="color: gray; text-align: center">로그인</h1>
-				<hr>
-				<input type="hidden" name="action" value="login">
+			<form action="user">
+				<input type="hidden" name="action" value="signup">
+				<h3>회원가입</h3>
 				<div class="form-group">
 					<input type="text" class="form-control" name="userId" required>
 					<span>아이디</span> <span class="border"></span>
 				</div>
-
 				<div class="form-group">
 					<input type="password" class="form-control" name="password"
 						required> <span>비밀번호</span> <span class="border"></span>
 				</div>
-
-				<button id="login" type="submit">로그인</button>
-
-				<button id="regis">회원가입</button>
-				<button type="button" onclick="history.back()" />
-				취소
-				</button>
+				<div class="form-group">
+					<input type="text" class="form-control" name="userName" required>
+					<span>이름</span> <span class="border"></span>
+				</div>
+				<button id="reg" type="submit">가입</button>
+				<button type="submit" onclick="history.back()" >취소</button>
 			</form>
 		</div>
 	</div>
-
 </body>
 
 </html>
