@@ -13,12 +13,13 @@ public class Video {
 		super();
 	}
 
-	public Video(String id, String title, String part, String channelName, int viewCnt) {
+	public Video(String id, String title, String part, String channelName, String url,int viewCnt) {
 		super();
 		this.id = id;
 		this.title = title;
 		this.part = part;
 		this.channelName = channelName;
+		this.url = url;
 		this.viewCnt = viewCnt;
 	}
 
